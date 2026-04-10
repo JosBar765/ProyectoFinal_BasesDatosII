@@ -6,6 +6,8 @@ Punto de entrada del sistema. Orquesta el flujo completo:
 2. Extrae categorías válidas
 3. Filtra datasets según categorías
 4. Valida consistencia de categorías
+
+Ejecuta todo
 """
 
 import os
