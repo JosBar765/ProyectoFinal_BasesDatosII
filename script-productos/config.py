@@ -5,6 +5,9 @@ Este módulo define la configuración del sistema:
 - Carpetas de entrada y salida
 - Columnas por defecto
 - Configuración específica por archivo de entrada
+
+MANTENER EL CAMPO DE NOMBRE DEL PRODUCTO (sea como sea que se llame)
+COMO PRIMER COLUMNA
 """
 
 # Carpeta donde se encuentran los archivos CSV originales
