@@ -103,6 +103,25 @@ def validar_datasets(ruta_categorias, archivos_filtrados):
         archivos_filtrados=archivos_filtrados
     )
 
+def limpiar_resultados(archivos_filtrados):
+    """
+    Elimina archivos originales (-products.xlsx) si existe su versión filtrada.
+
+    - Busca archivos en la carpeta de salida
+    - Si existe archivo filtrado, elimina el original correspondiente
+    """
+    ruta_base = os.path.join(os.getcwd(), CARPETA_SALIDA)
+
+    for archivo_filtrado in archivos_filtrados:
+        # Genera nombre del archivo original
+        archivo_original = archivo_filtrado.replace("-filtrado.xlsx", ".xlsx")
+
+        ruta_original = os.path.join(ruta_base, archivo_original)
+
+        if os.path.exists(ruta_original):
+            os.remove(ruta_original)
+            print(f"🗑️ Eliminado: {archivo_original}")
+
 
 def main():
     """
@@ -144,20 +163,22 @@ def main():
         archivos_filtrados
     )
 
-    # 4. Validar resultados
-    es_valido = validar_datasets(
-        ruta_categorias,
-        archivos_filtrados
-    )
-
     # 5. Mapear categorías a IDs (solo si todo está OK)
     if es_valido:
         print("\n🔗 Generando IDs de categorías...")
-        
-        mapear_categorias_archivos(
+
+        ok_mapper = mapear_categorias_archivos(
             archivos_filtrados,
             ruta_categorias
         )
+
+        if ok_mapper:
+            print("\n🧹 Limpiando archivos intermedios...")
+            limpiar_resultados(archivos_filtrados)
+            print(f"\n✅✅✅ Proceso ejecutado correctamente. Archivos finales disponibles en: {os.path.join(os.getcwd(), CARPETA_SALIDA)}")
+        else:
+            print("\n❌ No se limpiaron archivos por error en el mapeo")
+
     else:
         print("\n❌ Proceso detenido por errores de validación")
 
