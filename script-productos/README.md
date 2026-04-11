@@ -26,7 +26,9 @@ import nltk
 ```
 
 > [!NOTE]
-> Asegurate de tener instaladas las dependencias antes de ejecutar el programa. En caso de no tenerlas instaladas, se puden instalar usando `pip`:
+> Asegurate de tener instaladas las dependencias antes de ejecutar el programa. 
+
+En caso de no tenerlas instaladas, se puden instalar usando `pip`:
 
 ```bash
 pip install pandas nltk
