@@ -17,6 +17,7 @@ from processor import procesar_archivo
 from categories import extraer_categorias
 from category_filter import filtrar_categorias
 from validator import validar_categorias
+from category_mapper import mapear_categorias_archivos
 
 
 def procesar_csvs(config_archivos, ruta_entrada_base, ruta_salida_base, columnas_default):
@@ -93,10 +94,11 @@ def filtrar_datasets(archivos_procesados, ruta_categorias, ruta_salida_base):
 def validar_datasets(ruta_categorias, archivos_filtrados):
     """
     Verifica que los datasets filtrados usen únicamente categorías válidas.
+    Retorna True si todo está correcto.
     """
     print("\n🧪 Validando uso de categorías en filtrados...")
 
-    validar_categorias(
+    return validar_categorias(
         ruta_categorias_validas=ruta_categorias,
         archivos_filtrados=archivos_filtrados
     )
@@ -137,10 +139,27 @@ def main():
     )
 
     # 4. Validar resultados
-    validar_datasets(
+    es_valido = validar_datasets(
         ruta_categorias,
         archivos_filtrados
     )
+
+    # 4. Validar resultados
+    es_valido = validar_datasets(
+        ruta_categorias,
+        archivos_filtrados
+    )
+
+    # 5. Mapear categorías a IDs (solo si todo está OK)
+    if es_valido:
+        print("\n🔗 Generando IDs de categorías...")
+        
+        mapear_categorias_archivos(
+            archivos_filtrados,
+            ruta_categorias
+        )
+    else:
+        print("\n❌ Proceso detenido por errores de validación")
 
 
 if __name__ == "__main__":

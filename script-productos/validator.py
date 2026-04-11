@@ -104,8 +104,10 @@ def validar_categorias(ruta_categorias_validas, archivos_filtrados):
 
     if len(no_validas) == 0:
         print("✅ OK: Todos los filtrados usan SOLO categorías válidas")
+        return True
     else:
         print("❌ ERROR: Hay categorías inválidas en filtrados")
 
         print(f"\n🚨 Categorías inválidas: {len(no_validas)}")
         print("Ejemplos:", list(no_validas)[:10])
+        return False

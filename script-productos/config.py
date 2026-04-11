@@ -20,8 +20,8 @@ COLUMNAS_DEFAULT = [
     "description",
     "final_price",
     "currency",
-    "categories",
-    "rating"
+    "rating",
+    "categories"
 ]
 
 # Configuración de archivos de entrada
@@ -39,8 +39,8 @@ CONFIG_ARCHIVOS = [
             "description",
             "final_price",
             "currency",
-            "categories",
-            "rating"
+            "rating",
+            "categories"
         ]
     }
 ]

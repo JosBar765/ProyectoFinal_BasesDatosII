@@ -137,7 +137,10 @@ def extraer_categorias(archivos, ruta_salida):
     categorias_ordenadas = sorted(categorias_filtradas)
 
     # Guarda resultado en Excel
-    df_resultado = pd.DataFrame({"categoria": categorias_ordenadas})
+    df_resultado = pd.DataFrame({
+        "id": range(1, len(categorias_ordenadas) + 1),
+        "categoria": categorias_ordenadas
+    })
     df_resultado.to_excel(ruta_salida, index=False)
 
     # Logs de resultado
