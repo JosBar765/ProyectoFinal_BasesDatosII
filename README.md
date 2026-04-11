@@ -62,4 +62,4 @@ Este proyecto consiste en un portal de compras funcional que simula un sistema d
 ## 📝 Notas
 
 > [!TIP]
-> Proyecto orientado a fines académicos que demuestra la integración entre base de datos y lógica de negocio en un sistema tipo e-commerce.
+> Proyecto con fines académicos que demuestra la integración entre base de datos y lógica de negocio en un sistema tipo e-commerce.
