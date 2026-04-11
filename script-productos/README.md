@@ -73,6 +73,60 @@ Podés modificar:
 
 ---
 
+## 🛠️ Solución de Problemas
+
+> [!WARNING]
+> Si ocurre algún error durante la ejecución, podés guiarte con los siguientes casos comunes:
+
+### 🔹 Errores durante el procesamiento de archivos `.csv`
+
+- Verificá el archivo `config.py`
+- Asegurate de que:
+  - Las rutas de las carpetas estén bien definidas
+  - Los nombres de las columnas existan y coincidan exactamente con los archivos
+
+---
+
+### 🔹 Errores en la identificación de categorías
+
+- Verificá que exista la columna:
+
+```text
+categories
+```
+
+- Esta columna debe estar presente en los archivos generados por el procesador
+
+---
+
+### 🔹 Errores durante el filtrado de archivos
+
+- Puede deberse a:
+  - Nombres de archivos incorrectos
+  - Archivos inexistentes
+  - Falta de la columna `categories` en los archivos
+
+---
+
+### 🔹 Errores en la validación de resultados
+
+- Modificá el archivo `categories.py`
+- Agregá las categorías problemáticas en la variable:
+
+```python
+BLACKLIST
+```
+
+---
+
+## 🧪 Archivos temporales
+
+> [!IMPORTANT]
+> Si todo el proceso se ejecuta correctamente, los archivos intermedios/auxiliares serán eliminados automáticamente.
+
+> [!NOTE]
+> En caso de error, estos archivos se conservarán en la carpeta de destino definida en `config.py`, lo cual permite su análisis para fines de depuración.
+
 ## 📝 Notas
 
 > [!TIP]
