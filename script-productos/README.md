@@ -65,11 +65,15 @@ pip install pandas nltk
 > [!IMPORTANT]
 > Cualquier cambio en la estructura del proyecto debe realizarse en el archivo `config.py`.
 
+> [!IMPORTANT]
+> Siempre mantener como primer columna el nombre del producto.
+
 Podés modificar:
 
 - Nombre o rutas de las carpetas
 - Agregar o quitar archivos `.csv`
 - Definir columnas personalizadas para algún archivo `.csv`
+- Definir el orden de las columnas
 
 ---
 
@@ -121,11 +125,11 @@ BLACKLIST
 
 ## 📝 Notas
 
-> [!IMPORTANT]
+> [!NOTE]
 > Si todo el proceso se ejecuta correctamente, los archivos intermedios/auxiliares serán eliminados automáticamente.
 
 > [!NOTE]
 > En caso de error, estos archivos se conservarán en la carpeta de destino definida en `config.py`, lo cual permite su análisis para fines de depuración.
 
-> [!TIP]
+> [!NOTE]
 > Asegurarse de mantener la estructura de carpetas para evitar errores durante la ejecución.
