@@ -119,15 +119,13 @@ BLACKLIST
 
 ---
 
-## 🧪 Archivos temporales
+## 📝 Notas
 
 > [!IMPORTANT]
 > Si todo el proceso se ejecuta correctamente, los archivos intermedios/auxiliares serán eliminados automáticamente.
 
 > [!NOTE]
 > En caso de error, estos archivos se conservarán en la carpeta de destino definida en `config.py`, lo cual permite su análisis para fines de depuración.
-
-## 📝 Notas
 
 > [!TIP]
 > Asegurarse de mantener la estructura de carpetas para evitar errores durante la ejecución.
