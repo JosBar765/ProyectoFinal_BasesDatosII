@@ -43,7 +43,9 @@ def procesar_dataframe(df):
     - Normaliza precios, moneda y descripción si existen
     """
     df = df.drop_duplicates()
-    df = df.applymap(lambda x: x.replace('"', '').replace("'", "") if isinstance(x, str) else x)
+    df = df.apply(lambda col: col.map(
+        lambda x: x.replace('"', '').replace("'", "") if isinstance(x, str) else x
+    ))
 
     # Limpia columna de precio
     if "final_price" in df.columns:
